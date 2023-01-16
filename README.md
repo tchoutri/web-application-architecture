@@ -8,16 +8,17 @@ file and work as much as possible in the `slides.md` file.
 
 Make sure you have `pandoc` available.
 
-    make standalone # will generate a self-contained HTML file
-                    # with notes displayed on slides: an easily
-                    # shareable format
-    make slides-light.html # will generate a regular HTML file usable
+    make slides # will generate a regular HTML file usable
                            # locally, with notes hidden
-                           # perfect for presenting
+                           # perfect for presenting.
+    make standalone # will generate a self-contained HTML file
+                    # without note.
+    make with-notes # will genrate a self-contained HTML file
+                    # with notes displayed on the side.
 
 ## How to present
 
-`slides-light.html` can be opened directly, but if you have proper multi-screen
+`slides.html` can be opened directly, but if you have proper multi-screen
 support, you can open `onstage.html` instead, which will give you a presenter
 screen.
 

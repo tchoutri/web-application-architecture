@@ -14,7 +14,7 @@ standalone:
 	      --highlight-style breezedark \
 	      --metadata embed-css \
 	       -s slides.md \
-	       -o slides.html
+	       -o slides-standalone.html
 
 with-notes:
 	pandoc -t dzslides \
@@ -24,10 +24,10 @@ with-notes:
 	      --metadata display-notes \
 	      --metadata embed-css \
 	       -s slides.md \
-	       -o slides.html
+	       -o slides-standalone.html
 
 clean:
 	-rm slides.html
-	-rm slides-light.html
+	-rm slides-standalone.html
 
 .PHONY: all $(MAKECMDGOALS)

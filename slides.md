@@ -213,21 +213,12 @@ getEntityName :: Int -> Eff [DB, Redis, Logging] Text
 
 # Haskell — Pure, Functional Programming
 
-<p class="big-1 prose">
-When a type system is both *strong* and *expressive*…
-</p>
+## The result
+<ul class="big-1 prose incremental">
+  <li> When a type system is both *strong* and *expressive*… </li>
 
----
-
-# Haskell — Pure, Functional Programming
-
-<p class="big-1 prose">
-When a type system is both *strong* and *expressive*…
-</p>
-
-<p class="big-1 prose">
-We get a lot closer to fearless refactoring! 🎉
-</p>
+  <li> We get a lot closer to fearless refactoring! 🎉 </li>
+</ul>
 
 ---
 
@@ -258,8 +249,10 @@ You also have to come to terms with the fact that your worst enemy is yourself.
 
 ## The limits of “correct by construction”
 
+::: incremental
 * Haskell is not a prover.
 * Write tests (integration, properties, end-to-end)
+:::
 
 ---
 
@@ -314,6 +307,7 @@ the terminology and techniques that were created in the discipline, and how they
 
 <div class="presentation centered">
 <div>
+
 * Data Transfer Object
 
 * Data Access Object
@@ -330,6 +324,7 @@ the terminology and techniques that were created in the discipline, and how they
 
 <div class="presentation centered">
 <div>
+
 * Data Transfer Object
 
 * Data Access Object
@@ -645,58 +640,39 @@ Workflow {name = "w1.processed.departure"}
 
 ---
 
-
 # Where not to go from here?
 
-* Database layers that promise type-safe SQL
-  * Trivial to implement
+## Database layers that promise type-safe SQL
+
+* Trivial to implement
+
+* Type-level encoding of SQL semantics (golden goose)
 
 
 ::: notes
 If we ever find a database layer that promises type safety, either it is
-of type safety that is trivial to implement and it's totally expected of the tool to have it,
-or it has encoded the semantics of SQL at the type-level and we've either found the golden egg,
-or someone has clearly underestimated the difficulty of SQL semantics.
-:::
-
----
-
-
-# Where not to go from here?
-
-* Database layers that promise type-safe SQL
-  * Trivial to implement
-  * Type-level encoding of SQL semantics (golden goose)
-
-
-::: notes
-If we ever find a database layer that promises type safety, either it is
-of type safety that is trivial to implement and it's totally expected of the tool to have it(cont.)
+of type safety that is trivial to implement and it's totally expected of the tool to
+have it, or it has encoded the semantics of SQL at the type-level and we've either
+found the golden egg, or someone has clearly underestimated the difficulty
+of SQL semantics.
 :::
 
 ---
 
 # Where not to go from here?
 
-* SQLite for development, PostgreSQL in production
-  * Restricted subset of SQL
+## SQLite for development, PostgreSQL in production
+
+
+* Restricted subset of SQL
+
+* Different operational perspectives
 
 ::: notes
 We can acomplish great things by lying to the universe, but we scarcely accomplish anything by lying to ourselves.
 SQLite is its own system,
 and unless you somehow perfectly code in the common subset of SQL supported by both implementations, you will
-be maintaining two sets of database migrations(cont.)
-:::
-
----
-
-# Where not to go from here?
-
-* SQLite for development, PostgreSQL in production
-  * Restricted subset of SQL
-  * Different operational perspectives
-
-::: notes
+be maintaining two sets of database migrations.
 PostgreSQL has very good features, SQLite has different but very good
 features, but if you get used to one locally and discover the second one once deployed, you're going to have a bad
 time, and your muscle memory will be fairly useless.

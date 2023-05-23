@@ -733,6 +733,8 @@ program according to some input, this is particularly helpful.
 
 <img src="./assets/img/diataxis.png" width=100%>
 
+Diátaxis documentation framework, diataxis.fr
+
 ::: notes
 With expressive types we can get an API reference more or less for free. 
 This is super useful for OpenAPI description and documentation generation tools.
@@ -744,4 +746,5 @@ This is super useful for OpenAPI description and documentation generation tools.
 
 * _Domain Modeling Made Functional_ by Scott Wlaschin
 * _Living Documentation_ by Cyrille Martraire
+* _Diátaxis documentation framework_, Daniele Procida, diataxis.fr
 * Hideous amounts of caffeine

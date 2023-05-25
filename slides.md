@@ -48,7 +48,7 @@ and many other features that almost every language has today
 
 A record declaration
 ```haskell
-data RecordName = RecordConstructor
+data Record = RecordConstructor
   { field1 :: Int
   , field2 :: Bool
   }
@@ -88,6 +88,10 @@ function loggingIdentity<Type extends Lengthwise>(arg: Type): Type
 fn printer<T: Display>(t: T)
 ```
 
+::: notes
+This is ad-hoc polymorphism
+:::
+
 ---
 
 # Syntax primer
@@ -108,9 +112,49 @@ myEffectfulFunction :: (Show inputType) => inputType -> IO Int
 myEffectfulFunction argument = do
   -- print :: Show a => a -> IO ()
     print argument
-  -- pure @IO :: Int -> IO Int
+  -- pure :: Int -> IO Int
     pure 1
 ```
+
+---
+
+# Syntax Primer
+
+Remember `Record`? 
+
+<ul class="incremental nobullet">
+
+<li class="">
+
+```haskell
+data Record = RecordConstructor
+  { field1 :: Int
+  , field2 :: Bool
+  }
+```
+</li>
+
+<li>
+
+```haskell
+type Record :: Type -- ⚠️
+data Record = RecordConstructor
+  { field1 :: Int
+  , field2 :: Bool
+  }
+```
+
+</li>
+</ul>
+
+::: notes
+You remember our record from the other slide? It has a type signature right?
+Well guess what, types also have types! They're called kinds and we can specify them.
+This is going to be important because now it means that we can have other kind of 
+types, like type-level unions. And this is one hell of a nice tool to wield.
+to 
+
+:::
 
 ---
 
@@ -142,6 +186,7 @@ type data Access
 data User (privileges :: Access) = User
     { userId :: UserId
     , username :: Text
+    , […]
     }
 
 viewBackoffice :: User Admin -> IO HTML
@@ -214,11 +259,10 @@ getEntityName :: Int -> Eff [DB, Redis, Logging] Text
 # Haskell — Pure, Functional Programming
 
 ## The result
-<ul class="big-1 prose incremental">
-  <li> When a type system is both *strong* and *expressive*… </li>
-
-  <li> We get a lot closer to fearless refactoring! 🎉 </li>
-</ul>
+<p class="big-1 prose">
+  When a type system is both *strong* and *expressive*… <br>
+  ➡️  We get a lot closer to fearless refactoring! 🎉
+</p>
 
 ---
 
@@ -490,7 +534,7 @@ src/Flora/Model/Package
 ```
 
 ```Haskell
--- import Flora.Model.Package.Query qualified as Query
+import Flora.Model.Package.Query qualified as Query
 […]
 --   Visual Indicator
 --       ┌─────┐

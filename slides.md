@@ -671,7 +671,7 @@ Workflow {name = "w1.processed.departure"}
 λ❯ newWorkflow & sendBackWorkflow
 ```
 
-```
+```haskell
 <interactive>:16:15: error:
     • Couldn't match type ‘'Processed’ with ‘'Arrival’
       Expected: Workflow 'Arrival -> Workflow 'Departure
@@ -751,7 +751,10 @@ program according to some input, this is particularly helpful.
 
 ## Produce documentation
 
-<img src="./assets/img/diataxis.png" width=100%>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/img/diataxis-light.webp">
+  <img src="./assets/img/diataxis-dark.png" width=100%>
+</picture>
 
 Diátaxis documentation framework, diataxis.fr
 

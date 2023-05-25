@@ -3,7 +3,7 @@ all: slides
 slides:
 	pandoc -t dzslides \
 	      --template template.html \
-	      --highlight-style breezedark \
+	      --highlight-style kate \
 	       -s slides.md \
 	       -o slides.html
 
@@ -11,7 +11,7 @@ standalone:
 	pandoc -t dzslides \
 	      --self-contained \
 	      --template template.html \
-	      --highlight-style breezedark \
+	      --highlight-style kate \
 	      --metadata embed-css \
 	       -s slides.md \
 	       -o slides-standalone.html

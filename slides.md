@@ -151,8 +151,8 @@ data Record = RecordConstructor
 You remember our record from the other slide? It has a type signature right?
 Well guess what, types also have types! They're called kinds and we can specify them.
 This is going to be important because now it means that we can have other kind of 
-types, like type-level unions. And this is one hell of a nice tool to wield.
-to 
+types, like type-level unions. And this is one hell of a nice tool to wield, which we
+are going to see later.
 
 :::
 
@@ -314,7 +314,7 @@ the terminology and techniques that were created in the discipline, and how they
 # Bounded Contexts
 
 <img
-    src="./assets/img/bounded-context.png" width=450px height=300px
+    src="./assets/img/bounded-context.png" width=550px height=300px
     style="margin-left: 10rem; margin-right: 10rem;"
 >
 
@@ -325,11 +325,19 @@ the terminology and techniques that were created in the discipline, and how they
 ## Anatomy of a context
 
 <p class="properties">
+
 * An *autonomous* sub-system
     * Is responsible for one or multiple workflows
 
 * Well-defined boundaries
     * We know how to talk to it, its inputs and outputs
+
+* (NewCrafts 2023 exclusive) Heuristics
+    * Would it work as a 3rd-party product?
+    * Split off the stable and experimental parts
+    * Organise around what changes together
+
+(thank you Mathias)
 </p>
 
 ---

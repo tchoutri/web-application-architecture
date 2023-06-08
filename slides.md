@@ -118,7 +118,7 @@ myEffectfulFunction argument = do
 
 ---
 
-# Syntax Primer
+# Syntax primer
 
 Remember `Record`? 
 

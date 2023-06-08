@@ -15,7 +15,8 @@ introductory_notes: |
 
    The centerpiece of this talk is a community website called Flora.pm, which serves as an alternative
    index for the Haskell packages ecosystem, and also as a vessel for teaching how to architecture
-   web applications in Haskell.
+   web applications in Haskell. We're going to see concepts in Haskell & Domain-Driven Design that
+   are implemented in the codebase of Flora.
 
 #light: true
 #ratio43: true
@@ -42,6 +43,7 @@ and many other features that almost every language has today
 <img src="./assets/img/haskell-logo.png"
      width=50% class="center">
 
+<!--
 ---
 
 # Syntax primer
@@ -120,7 +122,7 @@ myEffectfulFunction argument = do
 
 # Syntax primer
 
-Remember `Record`? 
+Remember `Record`?
 
 <ul class="incremental nobullet">
 
@@ -150,11 +152,12 @@ data Record = RecordConstructor
 ::: notes
 You remember our record from the other slide? It has a type signature right?
 Well guess what, types also have types! They're called kinds and we can specify them.
-This is going to be important because now it means that we can have other kind of 
+This is going to be important because now it means that we can have other kind of
 types, like type-level unions. And this is one hell of a nice tool to wield, which we
 are going to see later.
 
 :::
+-->
 
 ---
 
@@ -318,6 +321,11 @@ the terminology and techniques that were created in the discipline, and how they
     style="margin-left: 10rem; margin-right: 10rem;"
 >
 
+::: notes
+Our first tool here is a bounded context. It contains our domain workflows,
+and has several properties that make it useful and reliable for systems architecture
+:::
+
 ---
 
 # Bounded Contexts
@@ -332,12 +340,12 @@ the terminology and techniques that were created in the discipline, and how they
 * Well-defined boundaries
     * We know how to talk to it, its inputs and outputs
 
-* (NewCrafts 2023 exclusive) Heuristics
+* (NewCrafts 2023 exclusive) Heuristics:
     * Would it work as a 3rd-party product?
     * Split off the stable and experimental parts
     * Organise around what changes together
 
-(thank you Mathias)
+(Thanks to Mathias Verraes)
 </p>
 
 ---

@@ -25,7 +25,7 @@ author:
   # - name: Théophile Choutri
     desc:
       - Backend engineer at Scrive </br> <span class="big-2">&</span>
-      - ~~Director~~ Helping hand at the Haskell Foundation
+      - ~~Secretary of the Board of Directors~~ Helping hand at the Haskell Foundation
 
 ---
 
